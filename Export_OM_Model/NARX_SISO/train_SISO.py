@@ -1,5 +1,5 @@
 """
-NARX_SISO: Demonstrates how to train and export an NARX-Neural network for a Single-Input-Single-Output (SISO) system. It is also possible to reduce the input dimension by using PCA.
+train_SISO: Demonstrates how to train and export an NARX-Neural network for a Single-Input-Single-Output (SISO) system. It is also possible to reduce the input dimension by using PCA.
 """
 
 # Standard Python libraries
