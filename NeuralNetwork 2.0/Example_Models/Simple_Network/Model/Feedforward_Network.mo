@@ -1,4 +1,4 @@
-model Feedforward_Network
+model Feedforward_Network "Simulation of the simple network to demonstrate how the usage of the neural network in OpenModelica works"
   Modelica.Blocks.Routing.Multiplex mux(n = 2) annotation(
     Placement(visible = true, transformation(origin = {-8, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Ramp ramp(duration = 20, height = 10, offset = 0) annotation(
