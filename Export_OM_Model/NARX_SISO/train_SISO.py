@@ -79,27 +79,6 @@ features_train, features_test, features_max, features_min = nn.scaling(nn.X_trai
 nn.train(features_train, nn.Y_train)
 nn.nn.summary()
 
-# Check if the network makes good predictions
-inputs_list = [u_pre[tau]]
-
-# Generate delayed inputs and add them to features
-for i in range(1, tau + 1):
-    inputs_list.append(u_pre[tau - i: -i])
-delayed_inputs = np.stack(inputs_list, axis=1)
-delayed_outputs = np.flip(y_pre[:tau])
-
-output_net = []
-for i in range(0, delayed_inputs.shape[0]):
-    net_in = (np.concatenate([delayed_inputs[i], delayed_outputs]) - features_min) / (features_max - features_min)
-    net_out = nn.nn.predict(np.array([net_in, ])).reshape(-1)
-    output_net.append(net_out[0])
-    delayed_outputs = np.concatenate([net_out, delayed_outputs[:-1])
-
-# Plot the result
-plt.plot(output_net)
-plt.plot(y_pre[tau:])
-plt.show()
-
 # Generate a Modelica model of the neural network
 NeuralOM = nom.Neural_OM_Model(nn.nn, ("false", None, None, None), ("true", features_max, features_min), ("false", None, None), ("false", None, None), ("false", None, None), "NARX")
 NeuralOM.build_OM_Model()
@@ -128,28 +107,6 @@ feature_new = (W.T @ X.T).T
 nn = Neural_Network.Neural_Network(feature_new, targets)
 features_train, features_test, features_max, features_min = nn.scaling(nn.X_train, nn.X_test)
 nn.train(features_train, nn.Y_train)
-
-# Check the prediction of the neural network with the previous PCA
-inputs_list = [u_pre[tau:]]
-
-# Generate delayed inputs and add them to features
-for i in range(1, tau + 1):
-    inputs_list.append(u_pre[tau - i: -i])
-
-delayed_inputs = np.stack(inputs_list, axis=1)
-delayed_outputs = np.flip(y_pre[:tau])
-
-output_net = []
-for i in range(0, delayed_inputs.shape[0]):
-    f = (np.concatenate([delayed_inputs[i], delayed_outputs]) - mu) / sigma
-    net_in = ((W.T @ f.T).T - features_min) / (features_max - features_min)
-    net_out = nn.nn.predict(np.array([net_in, ])).reshape(-1)
-    output_net.append(net_out[0])
-    delayed_outputs = np.concatenate([net_out, delayed_outputs[:-1])
-
-plt.plot(output_net)
-plt.plot(y_pre[tau:])
-plt.show()
 
 # Generate a Modelica model of the neural network with the feature reduction based on the previous PCA
 NeuralOM = nom.Neural_OM_Model(nn.nn, ("true", W.T, mu, sigma), ("true", features_max, features_min), ("false", None, None), ("false", None, None), ("false", None, None), "NARX_PCA")
