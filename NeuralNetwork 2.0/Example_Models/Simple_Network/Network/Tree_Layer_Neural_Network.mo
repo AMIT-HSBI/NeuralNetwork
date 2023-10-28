@@ -1,4 +1,4 @@
-block Tree_Layer_Neural_Network "This block models a very simple three layer Neural Network"
+block Tree_Layer_Neural_Network "This block models a very simple three layer Neural Network and should demonstrate the usage of the library"
 	// Parameter of Input Layer
 	parameter Real FirstLayer_bias[3] = {0, 0, 0} "Bias vector of the first layer";
     parameter Real FirstLayer_weights[3, 2] = [1, 0; 0, 1; 0, 0] "Weight matrix of the first layer";
