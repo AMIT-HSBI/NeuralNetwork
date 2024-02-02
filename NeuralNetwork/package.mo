@@ -226,5 +226,10 @@ NARX_MISO_3_Layer
       end    NARX_MISO;
   end Examples;
   annotation(
-    uses(Modelica(version = "4.0.0"), ExternData(version = "2.6.1")));
+    version="2.0.0",
+    uses(
+      Modelica(version = "4.0.0"),
+      ExternData(version = "2.6.1")
+    )
+  );
 end NeuralNetwork;
