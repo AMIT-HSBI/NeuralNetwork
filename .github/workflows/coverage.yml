@@ -35,7 +35,6 @@ jobs:
             omc
           libraries: |
             Modelica 4.0.0
-            ExternData 2.6.1
           omc-diff: true
 
       - name: openmodelica-library-testing
