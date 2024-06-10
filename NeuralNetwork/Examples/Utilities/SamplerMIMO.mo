@@ -1,4 +1,4 @@
-within NeuralNetwork.Utilities;
+within NeuralNetwork.Examples.Utilities;
 
 block SamplerMIMO "Make continuous signals discrete with a definded sample rate"
   extends Modelica.Blocks.Interfaces.DiscreteMIMO;

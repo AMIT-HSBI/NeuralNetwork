@@ -1,4 +1,4 @@
-within NeuralNetwork.Utilities;
+within NeuralNetwork.Examples.Utilities;
 
 block TimeDelay
   extends Modelica.Blocks.Interfaces.DiscreteMIMO;

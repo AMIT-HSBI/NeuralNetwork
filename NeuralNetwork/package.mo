@@ -17,7 +17,7 @@ package NeuralNetwork
     </p>
     </html>"),
     Icon(graphics = {
-      Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid,lineThickness = 1,extent = {{-80, 80}, {80, -80}}, radius = 20),
+      Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid,lineThickness = 1, extent = {{-100, 100}, {100, -100}}, radius = 20),
       Ellipse(origin = {-60, -40}, lineColor = {212, 0, 0}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Sphere, extent = {{10, 10}, {-10, -10}}),
       Ellipse(origin = {-60, 0}, lineColor = {212, 0, 0}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Sphere, extent = {{10, 10}, {-10, -10}}),
       Ellipse(origin = {-60, 40}, lineColor = {212, 0, 0}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Sphere, extent = {{10, 10}, {-10, -10}}),
