@@ -1,13 +1,13 @@
 within NeuralNetwork.Networks;
 
-partial block DenseFeedForward
+partial block Dense
   extends NeuralNetwork.Networks.Interfaces.Network;
 
-  parameter Integer numHiddenLayers = 1;
+  parameter Integer numHiddenLayers(min=0) = 0;
 
-  Layer.Input inputLayer annotation(
+  Layer.Input inputLayer(numInputs=numInputs) annotation(
     Placement(transformation(origin = {-70, 3.55271e-15}, extent = {{-30, -30}, {30, 30}})));
-  Layer.Hidden[numHiddenLayers] hiddenLayers if numHiddenLayers > 0 annotation(
+  Layer.Hidden[numHiddenLayers] hiddenLayers annotation(
     Placement(transformation(extent = {{-30, -30}, {30, 30}})));
   Layer.Output outputLayer annotation(
     Placement(transformation(origin = {70, 0}, extent = {{-30, -30}, {30, 30}})));
@@ -17,7 +17,7 @@ equation
 
   // Connect inputs with first hidden layer
   if numHiddenLayers > 0 then
-    connect(inputLayer.y, hiddenLayers[0].u) annotation(
+    connect(inputLayer.y, hiddenLayers[1].u) annotation(
     Line(points = {{-52, 0}, {-20, 0}}, color = {0, 0, 127}, thickness = 0.5));
     connect(hiddenLayers[numHiddenLayers].y, outputLayer.u) annotation(
       Line(points = {{18, 0}, {50, 0}}, color = {0, 0, 127}, thickness = 0.5));
@@ -31,4 +31,4 @@ equation
   end for;
 
   connect(outputLayer.y, y);
-end DenseFeedForward;
+end Dense;

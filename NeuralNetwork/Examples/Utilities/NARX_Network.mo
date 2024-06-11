@@ -1,6 +1,6 @@
 within NeuralNetwork.Examples.Utilities;
 
-block NARX_MISO_3_Layer
+block NARX_Network
   // This represents a three layer neural network with a given time delay
   parameter NeuralNetwork.Types.ActivationFunction f = NeuralNetwork.Types.ActivationFunction.ReLu;
 
@@ -47,4 +47,4 @@ equation
   connect(layer_2.y, layer_3.u) annotation(
     Line(points = {{16, 0}, {41, 0}}, color = {0, 0, 127}, thickness = 0.5));
   connect(layer_3.y, y);
-end NARX_MISO_3_Layer;
+end NARX_Network;

@@ -5,7 +5,7 @@ block Hidden "Block for a dense neural network layer"
   parameter NeuralNetwork.Types.ActivationFunction f = NeuralNetwork.Types.ActivationFunction.ReLu "Activation function of the layer";
 equation
   y = NeuralNetwork.ActivationFunctions.activationFunction(f, weights * u + bias);
-  
+
   annotation(
     Documentation(info = "<html><head></head><body>
     <p>

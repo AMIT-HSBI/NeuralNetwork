@@ -26,7 +26,7 @@ equation
   else
     y = yy;
   end if;
-  
+
   annotation(
     Documentation(info = "<html><head></head><body>
     <p>

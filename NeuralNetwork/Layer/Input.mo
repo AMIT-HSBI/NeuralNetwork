@@ -21,7 +21,7 @@ protected
   Real uu[dimFeatures] "Help variable for 'u' (needed when using standardization and/or when using scaling)";
 public
 equation
-  // Check if feature shell be reduced
+  // Feature reduction
   if pca then
     uPCA = transMatrix * ((u - mean_pca) ./ std_pca);
   else

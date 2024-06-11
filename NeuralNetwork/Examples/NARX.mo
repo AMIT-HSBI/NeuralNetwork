@@ -18,7 +18,7 @@ model NARX
     Placement(visible = true, transformation(origin = {-54, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Routing.Multiplex3 multiplex3 annotation(
     Placement(visible = true, transformation(origin = {-14, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  NeuralNetwork.Examples.Utilities.NARX_MISO_3_Layer nn annotation(
+  NeuralNetwork.Examples.Utilities.NARX_Network nn annotation(
     Placement(visible = true, transformation(origin = {82, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(sampler.y, timeDelay.u) annotation(
