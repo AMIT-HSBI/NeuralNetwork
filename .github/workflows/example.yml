@@ -1,4 +1,4 @@
-name: HelloWorld
+name: HelloWorld Example
 
 on:
   workflow_dispatch:
@@ -32,4 +32,5 @@ jobs:
 
       - name: Test notebooks
         run: |
-          pytest --nbmake "Example/HelloWorld.ipynb"
+          cd Example
+          pytest --nbmake HelloWorld.ipynb
