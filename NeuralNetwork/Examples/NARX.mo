@@ -38,6 +38,5 @@ equation
   connect(nn.y, multiplex3.u3) annotation(
     Line(points = {{81, 30}, {90, 30}, {90, 8}, {-40, 8}, {-40, 23}, {-32, 23}}, color = {0, 0, 127}, thickness = 0.5));
   annotation(
-    experiment(StartTime = 0, StopTime = 1, Tolerance = 1e-06, Interval = 0.002),
   Documentation(info = "<html><head></head><body><h1>Example: Nonlinear autoregressive exogenous model (NARX)</h1><div>Time series modelling of nonlinear autoregressive model with exogenous inputs using multiple inputs single output neural network.</div></body></html>"));
 end NARX;

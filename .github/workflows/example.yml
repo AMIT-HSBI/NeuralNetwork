@@ -1,4 +1,4 @@
-name: Python package
+name: HelloWorld
 
 on:
   workflow_dispatch:
@@ -32,4 +32,4 @@ jobs:
 
       - name: Test notebooks
         run: |
-          pytest --nbmake "Example\*.ipynb"
+          pytest --nbmake "Example/HelloWorld.ipynb"

@@ -34,5 +34,6 @@ annotation(
     <p>Compare simulation results for variables <b>reference</b> and <b>prediction</b>.
     </p>
     <img style='width: 100%' src=\"modelica://NeuralNetwork/Resources/Images/HelloWorld.png\" alt=\"HelloWorld.png\">
-    </body></html>"));
+    </body></html>"),
+  experiment(StartTime = 0, StopTime = 1, Tolerance = 1e-06, Interval = 0.002));
 end HelloWorld;
