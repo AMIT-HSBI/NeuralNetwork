@@ -1,4 +1,4 @@
-name: PythonToModelica
+name: Python package
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
     tags: 'v*'
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -25,12 +25,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
 
-      - name: Install PythonToModelica
+      - name: Install dependencies
         run: |
-          pip install setuptools
-          pip install -e ./PythonToModelica[dev]
+          pip install notebook nbmake pytest tensorflow numpy matplotlib pydot
           pip install -e ./PythonToModelica/
 
-      - name: Test
+      - name: Test notebooks
         run: |
-          pytest ./PythonToModelica/
+          pytest --nbmake "Example\*.ipynb"

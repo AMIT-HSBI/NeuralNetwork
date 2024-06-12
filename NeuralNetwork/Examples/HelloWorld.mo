@@ -28,7 +28,7 @@ annotation(
     <p>
     A two-dimensional polynomial equation is approximmated with a dense feed-forward neural network.
     The network was generated using Python script from Notebook
-    <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/main/Example/helloWorld.ipynb\">helloWorld.ipynb</a>.
+    <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/main/Example/HelloWorld.ipynb\">HelloWorld.ipynb</a>.
     </p>
     <h2>Expected Results</h2>
     <p>Compare simulation results for variables <b>reference</b> and <b>prediction</b>.

@@ -18,13 +18,20 @@ block PolynomNetwork "Neural Network approximating y = u*u + 0.5*u - 2.0 on inte
   ) annotation(
     Placement(transformation(origin = {50, 0}, extent = {{-30, -30}, {30, 30}})));
   
-  parameter Real[2,1] layer_1_weights = {{-0.961315}, {-1.00143}};
-  parameter Real[2] layer_1_bias = {0.931904, -1.06645};
-  parameter Real[1,2] layer_2_weights = {{-2.25319, 1.36178}};
-  parameter Real[1] layer_2_bias = {0.70991};
+  parameter Real[2,1] layer_1_weights = {{-0.95248}, {-0.943175}};
+  parameter Real[2] layer_1_bias = {0.872633, -0.949252};
+  parameter Real[1,2] layer_2_weights = {{-2.25385, 1.40389}};
+  parameter Real[1] layer_2_bias = {0.60548};
 equation
   connect(u, inputLayer.u);
   connect(inputLayer.y, outputLayer.u) annotation(
     Line(points = {{-48, 0}, {30, 0}}, color = {0, 0, 127}, thickness = 0.5));
   connect(outputLayer.y, y);
+annotation(
+    Documentation(info = "<html><head></head><body>
+    <h2>Training</h2><p>
+    Neural network parameters trained in 
+    <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/main/Example/HelloWorld.ipynb\">HelloWorld.ipynb</a>.
+    </p><p>Trained with TensorFlow on 8000 data points from interval [-1,1].</p>
+    </body></html>"));
 end PolynomNetwork;
