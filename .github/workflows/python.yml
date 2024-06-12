@@ -1,0 +1,30 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.5", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies and package
+        run: |
+          pip install setuptools
+          pip install -e ./PythonToModelica[dev]
+          pip install -e ./PythonToModelica/
+
+      - name: Test
+        run: |
+          pytest ./PythonToModelica/

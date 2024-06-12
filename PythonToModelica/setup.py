@@ -12,7 +12,6 @@ setup(
     ],
     extras_require={
         "dev": [
-            "setuptools",
             "pytest>=6.2.5",
             "pytest-cov>=2.12.1",
             "tensorflow>=2.2.0",
@@ -28,5 +27,5 @@ setup(
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.5',
 )

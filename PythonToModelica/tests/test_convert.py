@@ -10,9 +10,9 @@ class TestArray(unittest.TestCase):
     self.assertEqual(modelica_string, expected_string)
 
   def test_numpy_matrix_to_modelica(self):
-    matrix = np.arange(start=1, stop=10).reshape(2,3)
+    matrix = np.arange(start=1, stop=7).reshape(2,3)
     modelica_string = to_modelica('x', matrix)
-    expected_string = "Integer[3,3] x = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};"
+    expected_string = "Integer[2,3] x = {{1, 2, 3}, {4, 5, 6}};"
     self.assertEqual(modelica_string, expected_string)
 
   def test_numpy_tensor_to_modelica(self):
