@@ -3,12 +3,12 @@ within NeuralNetwork.Layer;
 block Output "Block for the last hidden neural network layer with a linear activation function."
   extends NeuralNetwork.Layer.Interfaces.Layer(lineColor={0, 170, 0});
   // Parameters for optional rescaling or destandardization
-  parameter Boolean rescale = false "Rescale the outputs with min-max denormalization";
-  parameter Real max[:] "Maximum for each dimension of the training outputs";
-  parameter Real min[:] "Minimum for each dimension of the training outputs";
-  parameter Boolean destandardization = false "Destandardize the inputs with mu-sigma";
-  parameter Real mean[:] "Estimated mean for each dimension of the training targets";
-  parameter Real std[:] "Estimated standard deviation for each dimension of the training targets";
+  parameter Boolean rescale = false           "Rescale the outputs with min-max denormalization";
+  parameter Real max[numNeurons] = zeros(numNeurons)  "Maximum for each dimension of the training outputs";
+  parameter Real min[numNeurons] = zeros(numNeurons)  "Minimum for each dimension of the training outputs";
+  parameter Boolean destandardization = false         "Destandardize the inputs with mu-sigma";
+  parameter Real mean[numNeurons] = zeros(numNeurons) "Estimated mean for each dimension of the training targets";
+  parameter Real std[numNeurons] = zeros(numNeurons)  "Estimated standard deviation for each dimension of the training targets";
 protected
   // Additional variables for rescaling/destandardization
   Real yy[numNeurons] "Help Variable for 'y' (using recaling or destandardization of the outputs)";
