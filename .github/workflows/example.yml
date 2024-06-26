@@ -1,0 +1,36 @@
+name: HelloWorld Example
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+    tags: 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install notebook nbmake pytest tensorflow numpy matplotlib pydot
+          pip install -e ./PythonToModelica/
+
+      - name: Test notebooks
+        run: |
+          cd Example
+          pytest --nbmake

@@ -1,0 +1,36 @@
+name: PythonToModelica Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+    tags: 'v*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install PythonToModelica
+        run: |
+          pip install setuptools
+          pip install -e ./PythonToModelica[dev]
+          pip install -e ./PythonToModelica/
+
+      - name: Test
+        run: |
+          pytest ./PythonToModelica/
