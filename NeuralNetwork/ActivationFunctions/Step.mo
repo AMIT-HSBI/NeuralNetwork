@@ -1,7 +1,7 @@
 within NeuralNetwork.ActivationFunctions;
 
-function Sigmoid
+function Step
   extends ActivationFunction;
 algorithm
-  y := 1 / (1 + exp(-u));
-end Sigmoid;
+  y := if u < 0 then 0 else 1;
+end Step;

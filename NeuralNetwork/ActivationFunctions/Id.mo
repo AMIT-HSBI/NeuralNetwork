@@ -1,7 +1,7 @@
 within NeuralNetwork.ActivationFunctions;
 
-function Sigmoid
+function Id
   extends ActivationFunction;
 algorithm
-  y := 1 / (1 + exp(-u));
-end Sigmoid;
+  y := u;
+end Id;
