@@ -7,7 +7,7 @@ block PolynomNetwork "Neural Network approximating y = u*u + 0.5*u - 2.0 on inte
     numNeurons = 2,
     weights = layer_1_weights,
     bias = layer_1_bias,
-    f = NeuralNetwork.Types.ActivationFunction.Hyperbolic_tangent
+    redeclare function f = NeuralNetwork.ActivationFunctions.Tanh
   ) annotation(
     Placement(transformation(origin = {-66, 0}, extent = {{-30, -30}, {30, 30}})));
   Layer.Output outputLayer(
@@ -17,7 +17,7 @@ block PolynomNetwork "Neural Network approximating y = u*u + 0.5*u - 2.0 on inte
     bias = layer_2_bias
   ) annotation(
     Placement(transformation(origin = {50, 0}, extent = {{-30, -30}, {30, 30}})));
-  
+
   parameter Real[2,1] layer_1_weights = {{-0.95248}, {-0.943175}};
   parameter Real[2] layer_1_bias = {0.872633, -0.949252};
   parameter Real[1,2] layer_2_weights = {{-2.25385, 1.40389}};
@@ -30,7 +30,7 @@ equation
 annotation(
     Documentation(info = "<html><head></head><body>
     <h2>Training</h2><p>
-    Neural network parameters trained in 
+    Neural network parameters trained in
     <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/main/Example/HelloWorld.ipynb\">HelloWorld.ipynb</a>.
     </p><p>Trained with TensorFlow on 8000 data points from interval [-1,1].</p>
     </body></html>"));

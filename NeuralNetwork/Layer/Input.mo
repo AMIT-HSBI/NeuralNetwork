@@ -2,7 +2,7 @@ within NeuralNetwork.Layer;
 
 block Input "Block for a dense input neural network layer with optional normalization"
   extends NeuralNetwork.Layer.Interfaces.Layer(lineColor={212, 0, 0});
-  parameter NeuralNetwork.Types.ActivationFunction f = NeuralNetwork.Types.ActivationFunction.ReLu "Activation function of the layer";
+  replaceable function f = NeuralNetwork.ActivationFunctions.ActivationFunction "Activation function of the layer";
   // PCA
   parameter Boolean pca = false "Reducing the feature space based on a PCA";
   parameter Integer dimFeatures = numInputs "Dimension of the new feature space";
@@ -40,7 +40,7 @@ equation
   end if;
 
   // Activation function
-  y = NeuralNetwork.ActivationFunctions.activationFunction(f, weights * uu + bias);
+  y = f(weights * uu + bias);
 
   annotation(
     Documentation(info = "<html><head></head><body>

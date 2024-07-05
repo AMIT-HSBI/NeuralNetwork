@@ -1,7 +1,7 @@
 within NeuralNetwork.ActivationFunctions;
 
-function Sigmoid
+function Softplus
   extends ActivationFunction;
 algorithm
-  y := 1 / (1 + exp(-u));
-end Sigmoid;
+  y := log(1 + exp(u));
+end Softplus;

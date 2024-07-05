@@ -1,7 +1,7 @@
 within NeuralNetwork.ActivationFunctions;
 
-function Sigmoid
+function Tanh
   extends ActivationFunction;
 algorithm
-  y := 1 / (1 + exp(-u));
-end Sigmoid;
+  y := tanh(u);
+end Tanh;

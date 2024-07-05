@@ -1,3 +1,7 @@
-ReLu
+ActivationFunction
+Id
+Step
 Sigmoid
-activationFunction
+Tanh
+ReLu
+Softplus
