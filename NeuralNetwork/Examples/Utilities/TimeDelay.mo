@@ -3,7 +3,7 @@ within NeuralNetwork.Examples.Utilities;
 block TimeDelay
   extends Modelica.Blocks.Interfaces.DiscreteMIMO;
   // Store the initial delayed inputs here
-  parameter Real y_start[nout] = fill(0.0, nout) "Initial (already delayed) output signal";
+  parameter Real y_start[nout] = zeros(nout) "Initial (already delayed) output signal";
   parameter Integer numInputs = 1 "Number of the system Inputs";
   parameter Integer numOutputs = 1 "Number of the system Outputs";
   // Delay of inputs: delay+1
