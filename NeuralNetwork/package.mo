@@ -1,6 +1,6 @@
 package NeuralNetwork
   annotation(
-    version = "2.0.0",
+    version = "2.1.0",
     uses(Modelica(version = "4.0.0")),
     Documentation(info = "<html>
     <p>
@@ -8,7 +8,7 @@ package NeuralNetwork
     </p>
     <h2 id=\"license\">License</h2>
     <p>
-      This package is licensed with the <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/v2.0.0/LICENSE\">3-Clause BSD License</a>.
+      This package is licensed with the <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/v2.1.0/LICENSE\">3-Clause BSD License</a>.
     </p>
     <h2 id=\"development-and-contribution\">Development and contribution</h2>
     <p>

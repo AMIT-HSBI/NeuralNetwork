@@ -28,7 +28,7 @@ showcased in Jupyter notebook
 
 ## Current release
 
-[Version 2.0.0][release-link]
+[Version 2.1.0][release-link]
 
 ## License
 
@@ -58,7 +58,7 @@ Tracker][issues-link].
 [example-badge]:   https://github.com/AMIT-HSBI/NeuralNetwork/actions/workflows/example.yml/badge.svg
 [example-link]:    https://github.com/AMIT-HSBI/NeuralNetwork/actions/workflows/example.yml
 [tensorflow-link]: https://www.tensorflow.org/
-[release-link]:    https://github.com/AMIT-HSBI/NeuralNetwork/releases/tag/v2.0.0
+[release-link]:    https://github.com/AMIT-HSBI/NeuralNetwork/releases/tag/v2.1.0
 [nn-v1-link]:      https://github.com/modelica-3rdparty/NeuralNetwork
 [hsbi-link]:       https://www.hsbi.de/ium
 [issues-link]:     https://github.com/AMIT-HSBI/NeuralNetwork/issues

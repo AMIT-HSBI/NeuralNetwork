@@ -41,7 +41,7 @@ jobs:
         uses: OpenModelica/openmodelica-library-testing-action@v0.2.0
         with:
           library: NeuralNetwork
-          library-version: '2.0.0'
+          library-version: '2.1.0'
           modelica-file: NeuralNetwork/package.mo
           omc-version: ${{ matrix.omc-version }}
           reference-files-dir: 'ReferenceFiles'
