@@ -1,6 +1,6 @@
 # PythonToModelica
 
-A package convert Python data types to Modelica strings.
+A package to convert Python data types to Modelica strings.
 
 ## Installation
 

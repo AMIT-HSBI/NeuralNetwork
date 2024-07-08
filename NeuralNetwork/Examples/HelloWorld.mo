@@ -3,19 +3,18 @@ within NeuralNetwork.Examples;
 model HelloWorld
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Sine sine(f = 1)  annotation(
-    Placement(transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}})));
+    Placement(transformation(origin = {-60, 0}, extent = {{-20, -20}, {20, 20}})));
   Utilities.SimpleEquation eq annotation(
-    Placement(transformation(origin = {0, 20}, extent = {{-10, -10}, {10, 10}})));
+    Placement(transformation(origin = {40, 30}, extent = {{-20, -20}, {20, 20}})));
   Utilities.PolynomNetwork nn(numInputs = 1, numOutputs = 1)  annotation(
-    Placement(transformation(origin = {0, -20}, extent = {{-10, -10}, {10, 10}})));
-    
+    Placement(transformation(origin = {40, -30}, extent = {{-20, -20}, {20, 20}})));
   Real reference = eq.y;
   Real prediction = nn.y[1];
 equation
   connect(sine.y, eq.u) annotation(
-    Line(points = {{-48, 0}, {-30, 0}, {-30, 20}, {-12, 20}}, color = {0, 0, 127}));
+    Line(points = {{-38, 0}, {-20, 0}, {-20, 30}, {16, 30}}, color = {0, 0, 127}));
   connect(sine.y, nn.u[1]) annotation(
-    Line(points = {{-48, 0}, {-30, 0}, {-30, -20}, {-12, -20}}, color = {0, 0, 127}));
+    Line(points = {{-38, 0}, {-20, 0}, {-20, -30}, {16, -30}}, color = {0, 0, 127}));
 annotation(
     Documentation(info = "<html><head></head><body>
     <p>Example showcasing how to replace block
