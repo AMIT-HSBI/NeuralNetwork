@@ -39,7 +39,7 @@ This package is licensed under the [3-Clause BSD License][license].
 The development is organized by
 [Hochschule Bielefeld – University of Applied Sciences and Arts, Faculty of Engineering and Mathematics][hsbi-link].
 
-Contributor need to sign the [contributor license agreement](https://gist.github.com/AnHeuermann/88b50d77314e3d669bc33e7f7cffaed3).
+Contributor need to sign a contributor license agreement.
 
 This package is based on [NeuralNetwork v1.0 (2006-04-28)][nn-v1-link].
 
