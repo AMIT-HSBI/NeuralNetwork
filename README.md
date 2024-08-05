@@ -39,6 +39,8 @@ This package is licensed under the [3-Clause BSD License][license].
 The development is organized by
 [Hochschule Bielefeld – University of Applied Sciences and Arts, Faculty of Engineering and Mathematics][hsbi-link].
 
+Contributor need to sign the [contributor license agreement](https://gist.github.com/AnHeuermann/88b50d77314e3d669bc33e7f7cffaed3).
+
 This package is based on [NeuralNetwork v1.0 (2006-04-28)][nn-v1-link].
 
 ### Build Python packages
@@ -50,8 +52,7 @@ build instructions.
 
 ### Issues
 
-You may report any issues by using the [Issue
-Tracker][issues-link].
+You may report any issues by using the [Issue Tracker][issues-link].
 
 [test-badge]:      https://github.com/AMIT-HSBI/NeuralNetwork/actions/workflows/coverage.yml/badge.svg
 [test-link]:       https://github.com/AMIT-HSBI/NeuralNetwork/actions/workflows/coverage.yml
