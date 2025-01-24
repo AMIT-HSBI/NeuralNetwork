@@ -10,6 +10,7 @@ model HelloWorld
     Placement(transformation(origin = {40, -30}, extent = {{-20, -20}, {20, 20}})));
   Real reference = eq.y;
   Real prediction = nn.y;
+  Real error = reference - prediction;
 equation
   connect(sine.y, eq.u) annotation(
     Line(points = {{-38, 0}, {-20, 0}, {-20, 30}, {16, 30}}, color = {0, 0, 127}));
