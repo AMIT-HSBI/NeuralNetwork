@@ -6,14 +6,14 @@ model HelloWorld
     Placement(transformation(origin = {-60, 0}, extent = {{-20, -20}, {20, 20}})));
   Utilities.SimpleEquation eq annotation(
     Placement(transformation(origin = {40, 30}, extent = {{-20, -20}, {20, 20}})));
-  Utilities.PolynomNetwork nn annotation(
+  Utilities.SimpleNetwork nn annotation(
     Placement(transformation(origin = {40, -30}, extent = {{-20, -20}, {20, 20}})));
   Real reference = eq.y;
-  Real prediction = nn.y[1];
+  Real prediction = nn.y;
 equation
   connect(sine.y, eq.u) annotation(
     Line(points = {{-38, 0}, {-20, 0}, {-20, 30}, {16, 30}}, color = {0, 0, 127}));
-  connect(sine.y, nn.u[1]) annotation(
+  connect(sine.y, nn.u) annotation(
     Line(points = {{-38, 0}, {-20, 0}, {-20, -30}, {16, -30}}, color = {0, 0, 127}));
   annotation(
     Documentation(info = "<html><head></head><body>
@@ -22,10 +22,10 @@ equation
       </p>
       <p>y = u^2 + 0.5u - 2</p>
       <p>with artificial neural network surrogate
-      <a href=\"modelica://NeuralNetwork.Examples.Utilities.PolynomNetwork\">PolynomNetwork</a>.
+      <a href=\"modelica://NeuralNetwork.Examples.Utilities.SimpleNetwork\">SimpleNetwork</a>.
       </p>
       <p>
-      A two-dimensional polynomial equation is approximmated with a dense feed-forward neural network.
+      A two-dimensional polynomial equation is approximated with a dense feed-forward neural network.
       The network was generated using Python script from Notebook
       <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/main/Example/HelloWorld.ipynb\">HelloWorld.ipynb</a>.
       </p>

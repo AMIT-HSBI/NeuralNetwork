@@ -1,7 +1,7 @@
 within NeuralNetwork.Examples.Utilities;
 
-block PolynomNetwork "Neural Network approximating y = u*u + 0.5*u - 2.0 on interval [-1,1]"
-  extends NeuralNetwork.Networks.Interfaces.Network(final u = inputLayer.u, final y = outputLayer.y);
+block SimpleNetwork "Neural Network approximating y = u*u + 0.5*u - 2.0 on interval [-1,1]"
+  extends NeuralNetwork.Networks.Interfaces.SISO(final u = inputLayer.u[1], final y = outputLayer.y[1]);
   Layer.Dense inputLayer(
     weights = layer_1_weights,
     bias = layer_1_bias,
@@ -29,4 +29,4 @@ equation
       <a href=\"https://github.com/AMIT-HSBI/NeuralNetwork/blob/main/Example/HelloWorld.ipynb\">HelloWorld.ipynb</a>.
       </p><p>Trained with TensorFlow on 8000 data points from interval [-1,1].</p>
       </body></html>"));
-end PolynomNetwork;
+end SimpleNetwork;

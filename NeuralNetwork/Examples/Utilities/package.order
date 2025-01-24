@@ -1,5 +1,5 @@
 NARX_Network
 SamplerMIMO
 TimeDelay
-PolynomNetwork
+SimpleNetwork
 SimpleEquation
