@@ -1,6 +1,5 @@
 within NeuralNetwork.Layer.Interfaces;
-
-partial model Layer
+partial block Layer
   // Topology of the neural network
   parameter Integer numInputs   "Specification of the inputs of the layer";
   parameter Integer numNeurons  "Number of neurons in the layer";

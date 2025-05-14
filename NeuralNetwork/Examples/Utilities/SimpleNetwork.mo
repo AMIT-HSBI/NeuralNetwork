@@ -1,7 +1,6 @@
 within NeuralNetwork.Examples.Utilities;
-
 block SimpleNetwork "Neural Network approximating y = u*u + 0.5*u - 2.0 on interval [-1,1]"
-  extends NeuralNetwork.Networks.Interfaces.SISO(final u = inputLayer.u[1], final y = outputLayer.y[1]);
+  extends NeuralNetwork.Networks.Interfaces.SISO;
   Layer.Dense inputLayer(
     weights = layer_1_weights,
     bias = layer_1_bias,
@@ -20,6 +19,9 @@ block SimpleNetwork "Neural Network approximating y = u*u + 0.5*u - 2.0 on inter
   parameter Real[1,2] layer_2_weights = {{-4.513856227908402, 2.4932885356708683}};
   parameter Real[1] layer_2_bias = {3.897109323824147};
 equation
+  connect( u, inputLayer.u[1]);
+  connect( outputLayer.y[1], y);
+
   connect(inputLayer.y, outputLayer.u) annotation(
     Line(points = {{-48, 0}, {30, 0}}, color = {0, 0, 127}, thickness = 0.5));
   annotation(

@@ -1,9 +1,10 @@
 within NeuralNetwork.Examples.Utilities;
-
 block NARX_Network
   // This represents a three layer neural network with a given time delay
 
-  extends NeuralNetwork.Networks.Interfaces.Network(u = layer_scale.u, y = layer_3.y);
+  extends NeuralNetwork.Networks.Interfaces.Network(
+    redeclare Modelica.Blocks.Interfaces.RealInput u[size(layer_1.u,1)],
+    redeclare Modelica.Blocks.Interfaces.RealOutput y[size(layer_3.y,1)]);
 
   NeuralNetwork.Layer.Preprocessing.Scale layer_scale(
     min = {
@@ -106,6 +107,9 @@ block NARX_Network
     redeclare function f = NeuralNetwork.ActivationFunctions.Id
    ) annotation(Placement(transformation(origin = {92, 0}, extent = {{-30, -30}, {30, 30}})));
 equation
+  connect( u, layer_scale.u);
+  connect( layer_3.y, y);
+
   connect(layer_scale.y, layer_1.u) annotation(
     Line(points = {{-74, 0}, {-52, 0}}, color = {0, 0, 127}, thickness = 0.5));
   connect(layer_1.y, layer_2.u) annotation(
