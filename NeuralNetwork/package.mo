@@ -1,7 +1,7 @@
 package NeuralNetwork
   annotation(
     version = "2.1.0",
-    uses(Modelica(version = "4.0.0")),
+    uses(Modelica(version = "4.1.0")),
     Documentation(info = "<html>
     <p>
       NeuralNetwork Modelica library.
